@@ -15,10 +15,10 @@ const refs = {
 
 refs.startBtn.addEventListener('click', onChangeBgrColor);
 
-function onChangeBgrColor() {
+function onChangeBgrColor(event) {
     const intervalID = setInterval(() => {
         refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, 6)];
-        refs.startBtn.disabled = true;
+        event.target.disabled = true;
     }, 1000);
 
     refs.stopBtn.addEventListener('click', () => {
