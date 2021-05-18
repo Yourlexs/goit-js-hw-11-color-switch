@@ -16,9 +16,9 @@ const refs = {
 refs.startBtn.addEventListener('click', onChangeBgrColor);
 
 function onChangeBgrColor(event) {
+    event.target.disabled = true;
     const intervalID = setInterval(() => {
         refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, 6)];
-        event.target.disabled = true;
     }, 1000);
 
     refs.stopBtn.addEventListener('click', () => {
